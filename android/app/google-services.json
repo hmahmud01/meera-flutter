@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "335794222888",
+    "project_id": "meera-78874",
+    "storage_bucket": "meera-78874.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:335794222888:android:c0416f07cefe6485ab421d",
+        "android_client_info": {
+          "package_name": "com.meera.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "335794222888-cm8f27un4s1otkoamtqf7fu1dnomlb2d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.meera.app",
+            "certificate_hash": "4c7a6c8e720b8ecc84df71512514600743e78d27"
+          }
+        },
+        {
+          "client_id": "335794222888-jq0paricmul9sn8u1ce4o2a1t4sr0d1u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCBVmONyBeloMuqxzGAZxZOvtVAgsivAcw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "335794222888-jq0paricmul9sn8u1ce4o2a1t4sr0d1u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
