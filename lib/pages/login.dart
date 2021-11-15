@@ -63,7 +63,6 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       body: Stack(
         children: <Widget>[
           // Center(
@@ -73,68 +72,79 @@ class _LoginState extends State<Login> {
             alignment: Alignment.topCenter,
             child: Padding(
               padding: const EdgeInsets.all(32.0),
-              child: Image.asset("images/logo.png", width: 150.0,),
+              child: Image.asset(
+                "images/logo.png",
+                width: 150.0,
+              ),
             ),
           ),
           Padding(
             padding: const EdgeInsets.only(top: 200.0),
             child: Center(
                 child: Form(
-                  child: Column(
-                    children: <Widget>[
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Material(
-                          borderRadius: BorderRadius.circular(4.0),
-                          color: Colors.red.withOpacity(0.2),
-                          elevation: 0.0,
-                          child: Padding(
-                            padding: const EdgeInsets.all(4.0),
-                            child: TextFormField(
-                              decoration: InputDecoration(
-                                hintText: "Email",
-                                icon: Icon(Icons.email),
-                              ),
-                            ),
+              child: Column(
+                children: <Widget>[
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Material(
+                      borderRadius: BorderRadius.circular(4.0),
+                      color: Colors.red.withOpacity(0.2),
+                      elevation: 0.0,
+                      child: Padding(
+                        padding: const EdgeInsets.all(4.0),
+                        child: TextFormField(
+                          decoration: InputDecoration(
+                            hintText: "Email",
+                            icon: Icon(Icons.email),
                           ),
                         ),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Material(
-                          borderRadius: BorderRadius.circular(4.0),
-                          color: Colors.red.withOpacity(0.2),
-                          elevation: 0.0,
-                          child: Padding(
-                            padding: const EdgeInsets.all(4.0),
-                            child: TextFormField(
-                              decoration: InputDecoration(
-                                hintText: "Password",
-                                icon: Icon(Icons.lock_outline),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Material(
-                          borderRadius: BorderRadius.circular(4.0),
-                          color: Colors.red,
-                          child: Padding(
-                            padding: const EdgeInsets.all(4.0),
-                            child: MaterialButton(onPressed: (){},
-                            minWidth: MediaQuery.of(context).size.width,
-                              child: Text("Login", textAlign: TextAlign.center,
-                              style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
-                            ),
-                            ),
-                          ),
-                        ),
-                    ],
+                    ),
                   ),
-                )
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Material(
+                      borderRadius: BorderRadius.circular(4.0),
+                      color: Colors.red.withOpacity(0.2),
+                      elevation: 0.0,
+                      child: Padding(
+                        padding: const EdgeInsets.all(4.0),
+                        child: TextFormField(
+                          decoration: InputDecoration(
+                            hintText: "Password",
+                            icon: Icon(Icons.lock_outline),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Material(
+                      borderRadius: BorderRadius.circular(4.0),
+                      color: Colors.red,
+                      child: Padding(
+                        padding: const EdgeInsets.all(4.0),
+                        child: MaterialButton(
+                          onPressed: () {
+                            Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (Context) => new HomePage()));
+                          },
+                          minWidth: MediaQuery.of(context).size.width,
+                          child: Text("Login",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold)),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
               ),
+            )),
           ),
         ],
       ),

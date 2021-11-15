@@ -1,9 +1,11 @@
+import 'package:app/pages/login.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_pro/carousel_pro.dart';
 
 import 'package:app/components/horizontal_list.dart';
 import 'package:app/components/products.dart';
 import 'package:app/pages/cart.dart';
+import 'package:app/pages/login.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -153,6 +155,21 @@ class _HomePageState extends State<HomePage> {
                 leading: Icon(
                   Icons.info,
                   color: Colors.lightBlue,
+                ),
+              ),
+            ),
+
+            Divider(),
+            InkWell(
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => new Login()));
+              },
+              child: ListTile(
+                title: Text("Logout"),
+                leading: Icon(
+                  Icons.logout,
+                  color: Colors.red,
                 ),
               ),
             ),
