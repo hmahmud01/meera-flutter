@@ -7,6 +7,7 @@ import 'package:google_sign_in/google_sign_in.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 import 'package:app/pages/home.dart';
+import 'package:app/pages/registration.dart';
 
 class Login extends StatefulWidget {
   @override
@@ -69,7 +70,7 @@ class _LoginState extends State<Login> {
           //   child: Image.asset('images/logo.png', fit: BoxFit.cover, width: 140.0,),
           // ),
           Container(
-            alignment: Alignment.topCenter,
+            alignment: Alignment.center,
             child: Padding(
               padding: const EdgeInsets.all(32.0),
               child: Image.asset(
@@ -79,7 +80,7 @@ class _LoginState extends State<Login> {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(top: 200.0),
+            padding: const EdgeInsets.only(top: 500.0),
             child: Center(
                 child: Form(
               child: Column(
@@ -94,8 +95,8 @@ class _LoginState extends State<Login> {
                         padding: const EdgeInsets.all(4.0),
                         child: TextFormField(
                           decoration: InputDecoration(
-                            hintText: "Email",
-                            icon: Icon(Icons.email),
+                            hintText: "ফোন নাম্বার",
+                            icon: Icon(Icons.phone),
                           ),
                         ),
                       ),
@@ -111,7 +112,7 @@ class _LoginState extends State<Login> {
                         padding: const EdgeInsets.all(4.0),
                         child: TextFormField(
                           decoration: InputDecoration(
-                            hintText: "Password",
+                            hintText: "গোপন পিন",
                             icon: Icon(Icons.lock_outline),
                           ),
                         ),
@@ -133,11 +134,12 @@ class _LoginState extends State<Login> {
                                     builder: (Context) => new HomePage()));
                           },
                           minWidth: MediaQuery.of(context).size.width,
-                          child: Text("Login",
+                          child: Text("সাইন-ইন করুন",
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                   color: Colors.white,
-                                  fontWeight: FontWeight.bold)),
+                                  fontWeight: FontWeight.bold
+                              )),
                         ),
                       ),
                     ),
@@ -155,10 +157,10 @@ class _LoginState extends State<Login> {
             color: Colors.red,
             onPressed: () {
               Navigator.pushReplacement(context,
-                  MaterialPageRoute(builder: (Context) => new HomePage()));
+                  MaterialPageRoute(builder: (Context) => new Registration()));
             },
             child: Text(
-              "Login with Google",
+              "অ্যাকাউন্ট তৈরি করুন",
               style: TextStyle(color: Colors.white),
             ),
           ),

@@ -83,7 +83,7 @@ class _HomePageState extends State<HomePage> {
                 print("Home Screen route");
               },
               child: ListTile(
-                title: Text("Home"),
+                title: Text("হোম"),
                 leading: Icon(
                   Icons.home,
                   color: Colors.red,
@@ -94,7 +94,7 @@ class _HomePageState extends State<HomePage> {
             InkWell(
               onTap: () {},
               child: ListTile(
-                title: Text("My Account"),
+                title: Text("নিজের আকাউন্ত"),
                 leading: Icon(
                   Icons.person,
                   color: Colors.red,
@@ -105,7 +105,7 @@ class _HomePageState extends State<HomePage> {
             InkWell(
               onTap: () {},
               child: ListTile(
-                title: Text("My Orders"),
+                title: Text("নিজের অর্ডার"),
                 leading: Icon(
                   Icons.shopping_basket,
                   color: Colors.red,
@@ -119,7 +119,7 @@ class _HomePageState extends State<HomePage> {
                     MaterialPageRoute(builder: (context) => new Cart()));
               },
               child: ListTile(
-                title: Text("Cart"),
+                title: Text("তালিকা"),
                 leading: Icon(
                   Icons.shopping_cart,
                   color: Colors.red,
@@ -151,7 +151,7 @@ class _HomePageState extends State<HomePage> {
             InkWell(
               onTap: () {},
               child: ListTile(
-                title: Text("About"),
+                title: Text("তত্থ"),
                 leading: Icon(
                   Icons.info,
                   color: Colors.lightBlue,
@@ -166,7 +166,7 @@ class _HomePageState extends State<HomePage> {
                     MaterialPageRoute(builder: (context) => new Login()));
               },
               child: ListTile(
-                title: Text("Logout"),
+                title: Text("লগ আউট করুন"),
                 leading: Icon(
                   Icons.logout,
                   color: Colors.red,
@@ -202,7 +202,7 @@ class _HomePageState extends State<HomePage> {
             child: Container(
               alignment: Alignment.centerLeft,
               child: new Text(
-                "Products",
+                "প্রোডাক্ট তালিকা",
                 style: TextStyle(fontWeight: FontWeight.w800, fontSize: 18.0),
               ),
             ),

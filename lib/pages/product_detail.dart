@@ -69,13 +69,6 @@ class _ProductDetailsState extends State<ProductDetails> {
                             color: Colors.grey,
                             decoration: TextDecoration.lineThrough),
                       )
-                      // Expanded(
-                      //     child: new Text(
-                      //   "\$${widget.product_detail_price}",
-                      //   style: TextStyle(
-                      //       color: Colors.grey,
-                      //       decoration: TextDecoration.lineThrough),
-                      // ))
                     ],
                   ),
                 ),
@@ -116,67 +109,67 @@ class _ProductDetailsState extends State<ProductDetails> {
                   )
               ),
               // Weight Button
-              Expanded(
-                  child: MaterialButton(
-                      onPressed: () {
-                        showDialog(context: context,
-                            builder: (context) {
-                              return new AlertDialog(
-                                title: new Text("Qty"),
-                                content: new Text("Please Select Weight"),
-                                actions: [
-                                  new MaterialButton(onPressed: (){
-                                    Navigator.of(context).pop(context);
-                                  },
-                                    child: new Text("Save"),
-                                  )
-                                ],
-                              );
-                            });
-                      },
-                      color: Colors.white,
-                      textColor: Colors.grey,
-                      elevation: 0.2,
-                      child: Row(
-                        children: [
-                          Expanded(child: new Text("Weight")),
-                          Expanded(
-                              child: new Icon(Icons.arrow_drop_down_circle))
-                        ],
-                      )
-                  )
-              ),
+              // Expanded(
+              //     child: MaterialButton(
+              //         onPressed: () {
+              //           showDialog(context: context,
+              //               builder: (context) {
+              //                 return new AlertDialog(
+              //                   title: new Text("Qty"),
+              //                   content: new Text("Please Select Weight"),
+              //                   actions: [
+              //                     new MaterialButton(onPressed: (){
+              //                       Navigator.of(context).pop(context);
+              //                     },
+              //                       child: new Text("Save"),
+              //                     )
+              //                   ],
+              //                 );
+              //               });
+              //         },
+              //         color: Colors.white,
+              //         textColor: Colors.grey,
+              //         elevation: 0.2,
+              //         child: Row(
+              //           children: [
+              //             Expanded(child: new Text("Weight")),
+              //             Expanded(
+              //                 child: new Icon(Icons.arrow_drop_down_circle))
+              //           ],
+              //         )
+              //     )
+              // ),
               // Color Button
-              Expanded(
-                  child: MaterialButton(
-                      onPressed: () {
-                        showDialog(context: context,
-                            builder: (context) {
-                              return new AlertDialog(
-                                title: new Text("Qty"),
-                                content: new Text("Please Color"),
-                                actions: [
-                                  new MaterialButton(onPressed: (){
-                                    Navigator.of(context).pop(context);
-                                  },
-                                    child: new Text("Save"),
-                                  )
-                                ],
-                              );
-                            });
-                      },
-                      color: Colors.white,
-                      textColor: Colors.grey,
-                      elevation: 0.2,
-                      child: Row(
-                        children: [
-                          Expanded(child: new Text("Color")),
-                          Expanded(
-                              child: new Icon(Icons.arrow_drop_down_circle))
-                        ],
-                      )
-                  )
-              )
+              // Expanded(
+              //     child: MaterialButton(
+              //         onPressed: () {
+              //           showDialog(context: context,
+              //               builder: (context) {
+              //                 return new AlertDialog(
+              //                   title: new Text("Qty"),
+              //                   content: new Text("Please Color"),
+              //                   actions: [
+              //                     new MaterialButton(onPressed: (){
+              //                       Navigator.of(context).pop(context);
+              //                     },
+              //                       child: new Text("Save"),
+              //                     )
+              //                   ],
+              //                 );
+              //               });
+              //         },
+              //         color: Colors.white,
+              //         textColor: Colors.grey,
+              //         elevation: 0.2,
+              //         child: Row(
+              //           children: [
+              //             Expanded(child: new Text("Color")),
+              //             Expanded(
+              //                 child: new Icon(Icons.arrow_drop_down_circle))
+              //           ],
+              //         )
+              //     )
+              // )
             ],
           ),
 
@@ -193,7 +186,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                         color: Colors.red,
                         textColor: Colors.white,
                         elevation: 0.2,
-                        child: new Text("Add Now")
+                        child: new Text("অর্ডার করুন")
                     )
                 ),
 
@@ -209,7 +202,7 @@ class _ProductDetailsState extends State<ProductDetails> {
           ),
           Divider(),
           new ListTile(
-            title: new Text("Product Details"),
+            title: new Text("পন্নের বর্ণনা"),
             subtitle: new Text(widget.product_detail_content),
           ),
           Divider(),

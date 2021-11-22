@@ -14,7 +14,7 @@ class _CartState extends State<Cart> {
       appBar: new AppBar(
         elevation: 0.1,
         backgroundColor: Colors.red,
-        title: Text('Shopping Cart'),
+        title: Text('শপিং কার্ট'),
         actions: <Widget>[
           // new IconButton(
           //     icon: Icon(
@@ -33,14 +33,14 @@ class _CartState extends State<Cart> {
             children: <Widget>[
               Expanded(
                   child: ListTile(
-                title: new Text("Total: "),
+                title: new Text("সর্বমোট: "),
                 subtitle: new Text("\$320"),
               )),
               Expanded(
                 child: new MaterialButton(
                   onPressed: () {},
                   child: new Text(
-                    "Check out",
+                    "পেমেন্ট করুন",
                     style: TextStyle(color: Colors.white),
                   ),
                   color: Colors.red,
