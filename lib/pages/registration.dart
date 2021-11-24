@@ -74,13 +74,13 @@ class _RegistrationState extends State<Registration> {
                         padding: const EdgeInsets.all(8.0),
                         child: Material(
                           borderRadius: BorderRadius.circular(4.0),
-                          color: Colors.red.withOpacity(0.2),
+                          color: Colors.black.withOpacity(0.2),
                           elevation: 0.0,
                           child: Padding(
                             padding: const EdgeInsets.all(4.0),
                             child: TextFormField(
                               decoration: InputDecoration(
-                                hintText: "Phone Number",
+                                hintText: "ফোণ নম্বর",
                                 icon: Icon(Icons.phone),
                               ),
                             ),
@@ -91,7 +91,41 @@ class _RegistrationState extends State<Registration> {
                         padding: const EdgeInsets.all(8.0),
                         child: Material(
                           borderRadius: BorderRadius.circular(4.0),
-                          color: Colors.red,
+                          color: Colors.black.withOpacity(0.2),
+                          elevation: 0.0,
+                          child: Padding(
+                            padding: const EdgeInsets.all(4.0),
+                            child: TextFormField(
+                              decoration: InputDecoration(
+                                hintText: "নিজের নাম",
+                                icon: Icon(Icons.supervised_user_circle_outlined),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Material(
+                          borderRadius: BorderRadius.circular(4.0),
+                          color: Colors.black.withOpacity(0.2),
+                          elevation: 0.0,
+                          child: Padding(
+                            padding: const EdgeInsets.all(4.0),
+                            child: TextFormField(
+                              decoration: InputDecoration(
+                                hintText: "ডিসট্রিক্ট",
+                                icon: Icon(Icons.location_on_outlined),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Material(
+                          borderRadius: BorderRadius.circular(4.0),
+                          color: Colors.black87,
                           child: Padding(
                             padding: const EdgeInsets.all(4.0),
                             child: MaterialButton(
@@ -102,7 +136,7 @@ class _RegistrationState extends State<Registration> {
                                         builder: (Context) => new Login()));
                               },
                               minWidth: MediaQuery.of(context).size.width,
-                              child: Text("অ্যাকাউন্ট তৈরি করুন",
+                              child: Text("সাবমিট করুন",
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
                                       color: Colors.white,
@@ -121,13 +155,13 @@ class _RegistrationState extends State<Registration> {
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: FlatButton(
-            color: Colors.red,
+            color: Colors.black87,
             onPressed: () {
               Navigator.pushReplacement(context,
                   MaterialPageRoute(builder: (Context) => new Login()));
             },
             child: Text(
-              "সাইন-ইন করুন",
+              "লগইন করুন",
               style: TextStyle(color: Colors.white),
             ),
           ),

@@ -30,7 +30,7 @@ class _ProductDetailsState extends State<ProductDetails> {
             onTap: (){
               Navigator.push(context, MaterialPageRoute(builder: (context)=> new HomePage()));
             },
-            child: Text('Meera App')
+            child: Text('mai seed')
         ),
         actions: <Widget>[
           new IconButton(
@@ -84,8 +84,8 @@ class _ProductDetailsState extends State<ProductDetails> {
                         showDialog(context: context,
                             builder: (context) {
                               return new AlertDialog(
-                                title: new Text("Qty"),
-                                content: new Text("Please Select Quantity"),
+                                title: new Text("প্যাকেট সংখ্যা"),
+                                content: new Text("প্যাকেট সংখ্যা উল্লেখ করুন"),
                                 actions: [
                                   new MaterialButton(onPressed: (){
                                     Navigator.of(context).pop(context);
@@ -101,7 +101,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                       elevation: 0.2,
                       child: Row(
                         children: [
-                          Expanded(child: new Text("Qty")),
+                          Expanded(child: new Text("প্যাকেট সংখ্যা")),
                           Expanded(
                               child: new Icon(Icons.arrow_drop_down_circle))
                         ],
@@ -183,7 +183,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                 Expanded(
                     child: MaterialButton(
                         onPressed: () {},
-                        color: Colors.red,
+                        color: Colors.black87,
                         textColor: Colors.white,
                         elevation: 0.2,
                         child: new Text("অর্ডার করুন")
@@ -191,10 +191,10 @@ class _ProductDetailsState extends State<ProductDetails> {
                 ),
 
                 new IconButton(icon: Icon(Icons.add_shopping_cart),
-                    color: Colors.red,
+                    color: Colors.black87,
                     onPressed: () {}),
                 new IconButton(icon: Icon(Icons.favorite_border),
-                    color: Colors.red,
+                    color: Colors.black87,
                     onPressed: () {})
 
               ],

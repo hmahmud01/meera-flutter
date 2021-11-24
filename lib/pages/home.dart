@@ -39,7 +39,7 @@ class _HomePageState extends State<HomePage> {
       appBar: new AppBar(
         elevation: 0.1,
         backgroundColor: Colors.red,
-        title: Text('Meera App'),
+        title: Text('mai seed'),
         actions: <Widget>[
           // new IconButton(
           //     icon: Icon(
@@ -94,7 +94,7 @@ class _HomePageState extends State<HomePage> {
             InkWell(
               onTap: () {},
               child: ListTile(
-                title: Text("নিজের আকাউন্ত"),
+                title: Text("আমার আকাউন্ত"),
                 leading: Icon(
                   Icons.person,
                   color: Colors.red,
@@ -105,7 +105,7 @@ class _HomePageState extends State<HomePage> {
             InkWell(
               onTap: () {},
               child: ListTile(
-                title: Text("নিজের অর্ডার"),
+                title: Text("আমার অর্ডার"),
                 leading: Icon(
                   Icons.shopping_basket,
                   color: Colors.red,
@@ -119,7 +119,7 @@ class _HomePageState extends State<HomePage> {
                     MaterialPageRoute(builder: (context) => new Cart()));
               },
               child: ListTile(
-                title: Text("তালিকা"),
+                title: Text("কার্ট"),
                 leading: Icon(
                   Icons.shopping_cart,
                   color: Colors.red,
@@ -130,7 +130,7 @@ class _HomePageState extends State<HomePage> {
             InkWell(
               onTap: () {},
               child: ListTile(
-                title: Text("Favourites"),
+                title: Text("পছন্দের প্রডাক্ট"),
                 leading: Icon(
                   Icons.favorite,
                   color: Colors.red,
@@ -140,18 +140,29 @@ class _HomePageState extends State<HomePage> {
 
             Divider(),
 
+            // InkWell(
+            //   onTap: () {},
+            //   child: ListTile(
+            //     title: Text("Settings"),
+            //     leading: Icon(Icons.settings),
+            //   ),
+            // ),
+
             InkWell(
               onTap: () {},
               child: ListTile(
-                title: Text("Settings"),
-                leading: Icon(Icons.settings),
+                title: Text("তত্থ"),
+                leading: Icon(
+                  Icons.info,
+                  color: Colors.lightBlue,
+                ),
               ),
             ),
 
             InkWell(
               onTap: () {},
               child: ListTile(
-                title: Text("তত্থ"),
+                title: Text("শর্তাবলী"),
                 leading: Icon(
                   Icons.info,
                   color: Colors.lightBlue,
@@ -181,18 +192,18 @@ class _HomePageState extends State<HomePage> {
           // image_carousel,
 
           // Catgory Header
-          new Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Container(
-              alignment: Alignment.centerLeft,
-              child: new Text(
-              "Categories",
-              style: TextStyle(fontWeight: FontWeight.w800, fontSize: 18.0),
-            )),
-          ),
+          // new Padding(
+          //   padding: const EdgeInsets.all(8.0),
+          //   child: Container(
+          //     alignment: Alignment.centerLeft,
+          //     child: new Text(
+          //     "Categories",
+          //     style: TextStyle(fontWeight: FontWeight.w800, fontSize: 18.0),
+          //   )),
+          // ),
 
           // Category List contents
-          HorizontalList(),
+          // HorizontalList(),
 
           Divider(),
 

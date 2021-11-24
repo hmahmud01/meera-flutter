@@ -89,7 +89,7 @@ class _LoginState extends State<Login> {
                     padding: const EdgeInsets.all(8.0),
                     child: Material(
                       borderRadius: BorderRadius.circular(4.0),
-                      color: Colors.red.withOpacity(0.2),
+                      color: Colors.black.withOpacity(0.2),
                       elevation: 0.0,
                       child: Padding(
                         padding: const EdgeInsets.all(4.0),
@@ -106,13 +106,13 @@ class _LoginState extends State<Login> {
                     padding: const EdgeInsets.all(8.0),
                     child: Material(
                       borderRadius: BorderRadius.circular(4.0),
-                      color: Colors.red.withOpacity(0.2),
+                      color: Colors.black.withOpacity(0.2),
                       elevation: 0.0,
                       child: Padding(
                         padding: const EdgeInsets.all(4.0),
                         child: TextFormField(
                           decoration: InputDecoration(
-                            hintText: "গোপন পিন",
+                            hintText: "পিন নাম্বার",
                             icon: Icon(Icons.lock_outline),
                           ),
                         ),
@@ -123,7 +123,7 @@ class _LoginState extends State<Login> {
                     padding: const EdgeInsets.all(8.0),
                     child: Material(
                       borderRadius: BorderRadius.circular(4.0),
-                      color: Colors.red,
+                      color: Colors.black87,
                       child: Padding(
                         padding: const EdgeInsets.all(4.0),
                         child: MaterialButton(
@@ -154,13 +154,13 @@ class _LoginState extends State<Login> {
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: FlatButton(
-            color: Colors.red,
+            color: Colors.black87,
             onPressed: () {
               Navigator.pushReplacement(context,
                   MaterialPageRoute(builder: (Context) => new Registration()));
             },
             child: Text(
-              "অ্যাকাউন্ট তৈরি করুন",
+              "রেজিস্টার করুন",
               style: TextStyle(color: Colors.white),
             ),
           ),

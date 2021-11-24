@@ -43,7 +43,7 @@ class _CartState extends State<Cart> {
                     "পেমেন্ট করুন",
                     style: TextStyle(color: Colors.white),
                   ),
-                  color: Colors.red,
+                  color: Colors.black87,
                 ),
               )
             ],
