@@ -34,7 +34,7 @@ class _CartState extends State<Cart> {
               Expanded(
                   child: ListTile(
                 title: new Text("সর্বমোট: "),
-                subtitle: new Text("\$320"),
+                subtitle: new Text("\৳ 320"),
               )),
               Expanded(
                 child: new MaterialButton(
