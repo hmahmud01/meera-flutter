@@ -6,7 +6,7 @@ import 'package:http/http.dart' as http;
 
 
 import 'package:app/pages/product_detail.dart';
-import 'package:app/models/Product.dart';
+import 'package:app/models/Product_backup.dart';
 
 List<Product> parseProducts(String responseBody){
   final parsed = json.decode(responseBody).cast<Map<String, dynamic>>();

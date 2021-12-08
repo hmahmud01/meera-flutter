@@ -1,17 +1,110 @@
 class Product {
-  final String name;
-  final String image;
-  final double price;
-  final String description;
+  int id;
+  String name;
+  double price;
+  double discPrice;
+  String description;
+  int invStock;
+  bool status;
+  String thumbImage;
+  String createdAt;
+  Category category;
+  PackSize packSize;
+  bool favourite;
+  List<String> zonelist;
 
-  Product(this.name, this.image, this.price, this.description);
+  Product(
+      {this.id,
+        this.name,
+        this.price,
+        this.discPrice,
+        this.description,
+        this.invStock,
+        this.status,
+        this.thumbImage,
+        this.createdAt,
+        this.category,
+        this.packSize,
+        this.favourite,
+        this.zonelist});
 
-  factory Product.fromMap(Map<String, dynamic> json) {
-    return Product(
-        json['name'],
-        json['thumb_image'],
-        json['price'],
-        json['description']
-    );
+  Product.fromJson(Map<String, dynamic> json) {
+    id = json['id'];
+    name = json['name'];
+    price = json['price'];
+    discPrice = json['disc_price'];
+    description = json['description'];
+    invStock = json['inv_stock'];
+    status = json['status'];
+    thumbImage = json['thumb_image'];
+    createdAt = json['created_at'];
+    category = json['category'] != null
+        ? new Category.fromJson(json['category'])
+        : null;
+    packSize = json['pack_size'] != null
+        ? new PackSize.fromJson(json['pack_size'])
+        : null;
+    favourite = json['favourite'];
+    zonelist = json['zonelist'].cast<String>();
+  }
+
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['id'] = this.id;
+    data['name'] = this.name;
+    data['price'] = this.price;
+    data['disc_price'] = this.discPrice;
+    data['description'] = this.description;
+    data['inv_stock'] = this.invStock;
+    data['status'] = this.status;
+    data['thumb_image'] = this.thumbImage;
+    data['created_at'] = this.createdAt;
+    if (this.category != null) {
+      data['category'] = this.category.toJson();
+    }
+    if (this.packSize != null) {
+      data['pack_size'] = this.packSize.toJson();
+    }
+    data['favourite'] = this.favourite;
+    data['zonelist'] = this.zonelist;
+    return data;
+  }
+}
+
+class Category {
+  int id;
+  String title;
+
+  Category({this.id, this.title});
+
+  Category.fromJson(Map<String, dynamic> json) {
+    id = json['id'];
+    title = json['title'];
+  }
+
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['id'] = this.id;
+    data['title'] = this.title;
+    return data;
+  }
+}
+
+class PackSize {
+  int id;
+  String size;
+
+  PackSize({this.id, this.size});
+
+  PackSize.fromJson(Map<String, dynamic> json) {
+    id = json['id'];
+    size = json['size'];
+  }
+
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['id'] = this.id;
+    data['size'] = this.size;
+    return data;
   }
 }
