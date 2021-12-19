@@ -45,67 +45,128 @@ class _LoginScreensState extends State<LoginScreens> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Login"),
-      ),
-      body: Padding(
-        padding: EdgeInsets.all(12),
-        child: SingleChildScrollView(
-          child: Form(
-            key: _form,
-            child: Column(
-              children: [
-                TextFormField(
-                  validator: (v){
-                    if(v.isEmpty){
-                      return 'Enter Your Username';
-                    }
-                    return null;
-                  },
-                  decoration: InputDecoration(
-                    hintText: "Username"
-                  ),
-                  onSaved: (v){
-                    _username = v;
-                  },
-                ),
-                TextFormField(
-                  validator: (v){
-                    if(v.isEmpty){
-                      return 'Enter Your Password';
-                    }
-                    return null;
-                  },
-                  decoration: InputDecoration(
-                      hintText: "Password"
-                  ),
-                  onSaved: (v){
-                    _password = v;
-                  },
-                  obscureText: true,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    RaisedButton(
-                      onPressed: (){
-                        _loginNow();
-                      },
-                      child: Text("Login"),
-                    ),
-                    FlatButton(
-                      onPressed: (){
-                        Navigator.of(context).pushReplacementNamed(RegisterScreen.routeName);
-                      },
-                      child: Text("Registration")
-                    )
-                  ],
-                )
-              ],
+      // appBar: AppBar(
+      //   title: Text("Login"),
+      // ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Padding(
+            padding: const EdgeInsets.fromLTRB(0, 8, 0, 0),
+            child: Text("সবজী বীজ কেনার সহজ উপায়",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                    color: Colors.black54,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18.0
+                )),
+          ),
+          Padding(
+            padding: EdgeInsets.all(8.0),
+            child: Image.asset(
+              "images/logo.png",
+              width: 100.0,
             ),
           ),
-        )
-      )
+          Padding(
+              padding: EdgeInsets.all(12),
+              child: SingleChildScrollView(
+                child: Form(
+                  key: _form,
+                  child: Column(
+                    children: [
+                      TextFormField(
+                        validator: (v){
+                          if(v.isEmpty){
+                            return "ফোন নাম্বার";
+                          }
+                          return null;
+                        },
+                        decoration: InputDecoration(
+                          hintText: "ফোন নাম্বার",
+                          icon: Icon(Icons.phone),
+                        ),
+                        onSaved: (v){
+                          _username = v;
+                        },
+                      ),
+                      TextFormField(
+                        validator: (v){
+                          if(v.isEmpty){
+                            return "পিন নাম্বার";
+                          }
+                          return null;
+                        },
+                        decoration: InputDecoration(
+                          hintText: "পিন নাম্বার",
+                          icon: Icon(Icons.lock_outline),
+                        ),
+                        onSaved: (v){
+                          _password = v;
+                        },
+                        obscureText: true,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Material(
+                          borderRadius: BorderRadius.circular(4.0),
+                          color: Colors.black87,
+                          child: Padding(
+                            padding: const EdgeInsets.all(4.0),
+                            child: MaterialButton(
+                              onPressed: () {
+                                _loginNow();
+                              },
+                              minWidth: MediaQuery.of(context).size.width,
+                              child: Text("সাইন-ইন করুন",
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold
+                                  )),
+                            ),
+                          ),
+                        ),
+                      ),
+                      // Row(
+                      //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      //   children: [
+                      //     RaisedButton(
+                      //       onPressed: (){
+                      //         _loginNow();
+                      //       },
+                      //       child: Text("Login"),
+                      //     ),
+                      //     FlatButton(
+                      //       onPressed: (){
+                      //         Navigator.of(context).pushReplacementNamed(RegisterScreen.routeName);
+                      //       },
+                      //       child: Text("Registration")
+                      //     )
+                      //   ],
+                      // )
+                    ],
+                  ),
+                ),
+              )
+          ),
+        ],
+      ),
+      bottomNavigationBar: Container(
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: FlatButton(
+            color: Colors.black87,
+            onPressed: () {
+              Navigator.of(context).pushReplacementNamed(RegisterScreen.routeName);
+            },
+            child: Text(
+              "রেজিস্টার করুন",
+              style: TextStyle(color: Colors.white),
+            ),
+          ),
+        ),
+      ),
     );
   }
 }
