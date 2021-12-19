@@ -1,8 +1,11 @@
 import 'package:app/pages/registration.dart';
 import 'package:app/screens/cart_screens.dart';
+import 'package:app/screens/category_screens.dart';
 import 'package:app/screens/favourite_screens.dart';
 import 'package:app/screens/home_screens.dart';
 import 'package:app/screens/login_screens.dart';
+import 'package:app/screens/order_history_screens.dart';
+import 'package:app/screens/order_screens.dart';
 import 'package:app/screens/product_details_screens.dart';
 import 'package:app/screens/registration_screens.dart';
 import 'package:app/state/cart_state.dart';
@@ -59,7 +62,10 @@ class Myapp extends StatelessWidget {
           FavouriteScreens.routeName: (ctx) => FavouriteScreens(),
           LoginScreens.routeName: (ctx) => LoginScreens(),
           RegisterScreen.routeName: (ctx) => RegisterScreen(),
-          CartScreen.routeName: (ctx) => CartScreen()
+          CartScreen.routeName: (ctx) => CartScreen(),
+          OrderScreens.routeName: (ctx) => OrderScreens(),
+          Order.routeName: (ctx) => Order(),
+          CategoryScreens.routeName: (ctx) => CategoryScreens()
         },
       ),
     );

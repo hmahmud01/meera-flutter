@@ -13,23 +13,27 @@ class FavouriteScreens extends StatelessWidget {
     return Scaffold(
       drawer: AppDrawer(),
       appBar: AppBar(
-        title: Text("Favourites"),
+        backgroundColor: Colors.red,
+        title: Text('MAI SEED'),
       ),
-      body: GridView.builder(
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            childAspectRatio: 3/2,
-            crossAxisCount: 2,
-            crossAxisSpacing: 10,
-            mainAxisSpacing: 10,
-          ),
-          itemCount: favourite.length,
-          itemBuilder: (ctx, i) => SingleProduct(
-            id: favourite[i].id,
-            name: favourite[i].name,
-            image: favourite[i].thumbImage,
-            price: favourite[i].price,
-            favourite: favourite[i].favourite,
-          )),
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: GridView.builder(
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              childAspectRatio: 3/2,
+              crossAxisCount: 2,
+              crossAxisSpacing: 10,
+              mainAxisSpacing: 10,
+            ),
+            itemCount: favourite.length,
+            itemBuilder: (ctx, i) => SingleProduct(
+              id: favourite[i].id,
+              name: favourite[i].name,
+              image: favourite[i].thumbImage,
+              price: favourite[i].price,
+              favourite: favourite[i].favourite,
+            )),
+      ),
     );
   }
 }

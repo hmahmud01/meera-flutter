@@ -7,6 +7,7 @@ import 'package:localstorage/localstorage.dart';
 class ProductState with ChangeNotifier{
   LocalStorage storage = new LocalStorage('usertoken');
   List<Product> _products = [];
+  List<Category> _category;
 
   Future<bool> getProducts() async{
     // String url = 'http://127.0.0.1:8000/api/products/';
@@ -19,7 +20,7 @@ class ProductState with ChangeNotifier{
       });
       List<Product> temp = [];
       var data = json.decode(response.body) as List;
-      print(data);
+      // print(data);
       data.forEach((element) {
           print(element);
           Product product = Product.fromJson(element);
@@ -32,6 +33,30 @@ class ProductState with ChangeNotifier{
       print("get products");
       print(e);
       return false;
+    }
+  }
+
+  Future<void> getCategoryData() async {
+    try {
+      var token = storage.getItem('token');
+      String url = 'http://10.0.2.2:8000/api/categorys/';
+      http.Response response = await http.get(
+        Uri.parse(url),
+        headers: {'Authorization': 'token $token'},
+      );
+      var data = json.decode(response.body) as List;
+      // print(data);
+      List<Category> temp = [];
+      data.forEach((element) {
+        Category category = Category.fromJson(element);
+        temp.add(category);
+      });
+      _category = temp;
+      print(_category);
+      notifyListeners();
+    } catch (e) {
+      print("error getCategoryData");
+      print(e);
     }
   }
 
@@ -58,8 +83,17 @@ class ProductState with ChangeNotifier{
     }
   }
 
+
+
   List<Product> get product{
     return [..._products];
+  }
+
+  List<Category> get category {
+    if (_category != null) {
+      return [..._category];
+    }
+    return null;
   }
 
   List<Product> get favourites{
@@ -68,6 +102,10 @@ class ProductState with ChangeNotifier{
 
   Product singleProduct(int id){
     return _products.firstWhere((element) => element.id==id);
+  }
+
+  List<Product> categoryposts(int id) {
+    return [..._products.where((element) => element.category.id == id)];
   }
 
 
