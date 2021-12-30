@@ -1,6 +1,7 @@
 import 'package:app/screens/cart_screens.dart';
 import 'package:app/state/product_state.dart';
 import 'package:app/widgets/app_drawer.dart';
+import 'package:app/widgets/home_button.dart';
 import 'package:app/widgets/singleProduct.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -30,6 +31,7 @@ class _CategoryScreensState extends State<CategoryScreens> {
         : Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.red,
+          centerTitle: true,
           title: Text('MAI SEED'),
           actions: [
             IconButton(
@@ -49,7 +51,7 @@ class _CategoryScreensState extends State<CategoryScreens> {
                 alignment: Alignment.centerLeft,
                 child: new Text(
                   "${product[0].category.title}",
-                  style: TextStyle(fontWeight: FontWeight.w800, fontSize: 18.0),
+                  style: TextStyle(fontFamily: 'NatoSans', fontWeight: FontWeight.w800, fontSize: 32.0),
                 ),
               ),
             ),
@@ -59,7 +61,7 @@ class _CategoryScreensState extends State<CategoryScreens> {
                 alignment: Alignment.centerLeft,
                 child: new Text(
                   "প্রয়োজন অনুযায়ী বীজ কেনার জন্য ছবির উপর প্রেস করুন",
-                  style: TextStyle(fontWeight: FontWeight.w200, fontSize: 12.0),
+                  style: TextStyle(fontFamily: 'NatoSans', fontWeight: FontWeight.w200, fontSize: 16.0),
                 ),
               ),
             ),
@@ -86,7 +88,9 @@ class _CategoryScreensState extends State<CategoryScreens> {
               ),
             ),
           ],
-        )
+        ),
+        floatingActionButton: HomeButton(),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
         // Padding(
         //   padding: const EdgeInsets.all(8.0),
         //   child: GridView.builder(

@@ -1,4 +1,5 @@
 import 'package:app/state/cart_state.dart';
+import 'package:app/widgets/home_button.dart';
 import 'package:flutter/material.dart';
 import 'package:app/widgets/app_drawer.dart';
 import 'package:provider/provider.dart';
@@ -13,6 +14,7 @@ class OrderScreens extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.red,
+        centerTitle: true,
         title: Text('MAI SEED'),
       ),
       drawer: AppDrawer(),
@@ -37,7 +39,9 @@ class OrderScreens extends StatelessWidget {
             );
           }
         ),
-      )
+      ),
+      floatingActionButton: HomeButton(),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
 }

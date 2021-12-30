@@ -2,7 +2,7 @@
     package="com.meera.app" xmlns:tools="http://schemas.android.com/tools">
     <uses-sdk tools:overrideLibrary="com.google.firebase.firebase_analytics" />
    <application
-        android:label="app"
+        android:label="MAI"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

@@ -52,7 +52,7 @@ class _LoginScreensState extends State<LoginScreens> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Padding(
-            padding: const EdgeInsets.fromLTRB(0, 8, 0, 0),
+            padding: const EdgeInsets.fromLTRB(0, 0, 0, 16),
             child: Text("সবজী বীজ কেনার সহজ উপায়",
                 textAlign: TextAlign.center,
                 style: TextStyle(
@@ -62,10 +62,10 @@ class _LoginScreensState extends State<LoginScreens> {
                 )),
           ),
           Padding(
-            padding: EdgeInsets.all(8.0),
+            padding: EdgeInsets.all(16.0),
             child: Image.asset(
-              "images/logo.png",
-              width: 100.0,
+              "images/logo_app_main.png",
+              width: 140.0,
             ),
           ),
           Padding(

@@ -40,6 +40,7 @@ class Myapp extends StatelessWidget {
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
+        // theme: ThemeData(fontFamily: 'NatoSans'),
         home: FutureBuilder(
           future: storage.ready,
           builder: (BuildContext context, AsyncSnapshot snapshot) {

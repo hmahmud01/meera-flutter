@@ -1,6 +1,7 @@
 import 'package:app/screens/home_screens.dart';
 import 'package:app/screens/order_screens.dart';
 import 'package:app/state/cart_state.dart';
+import 'package:app/widgets/home_button.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -19,6 +20,7 @@ class CartScreen extends StatelessWidget {
     else
       return Scaffold(
         appBar: AppBar(
+          centerTitle: true,
           backgroundColor: Colors.red,
           title: Text('MAI SEED'),
           actions: [
@@ -29,28 +31,6 @@ class CartScreen extends StatelessWidget {
           padding: EdgeInsets.all(12.0),
           child: Column(
             children: [
-              // Row(
-              //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              //   children: [
-              //     Text("Total: ${cart.total}"),
-              //     Text("Date: ${cart.date}"),
-              //     RaisedButton(
-              //       color: Colors.blue,
-              //       onPressed: cart.cartproducts.length<=0?null : (){
-              //         Navigator.of(context).pushNamed(Order.routeName);
-              //       },
-              //       child: Text("Order"),),
-              //     RaisedButton(
-              //       color: Colors.red,
-              //       onPressed: cart.cartproducts.length<=0?null : ()async{
-              //         bool isdelete = await Provider.of<CartState>(context, listen: false).deleteCart(cart.id);
-              //         if(isdelete){
-              //           Navigator.of(context).pushReplacementNamed(HomeScreens.routeName);
-              //         }
-              //       },
-              //       child: Text("Delete"),)
-              //   ],
-              // ),
               Expanded(child: ListView.builder(
                 itemCount: cart.cartproducts.length,
                 itemBuilder: (ctx,i){

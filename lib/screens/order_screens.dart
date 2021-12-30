@@ -36,6 +36,7 @@ class _OrderState extends State<Order> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.red,
+        centerTitle: true,
         title: Text('MAI SEED'),
       ),
       body: Padding(
