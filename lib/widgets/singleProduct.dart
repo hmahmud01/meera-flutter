@@ -26,7 +26,7 @@ class SingleProduct extends StatelessWidget {
       ),
       footer: GridTileBar(
         backgroundColor: Colors.black54,
-        title: Text(name),
+        title: Text(name , style: TextStyle(fontFamily: 'NatoSans'),),
         leading: IconButton(
           onPressed: () {
             Provider.of<ProductState>(context, listen: false).favouriteButton(id);

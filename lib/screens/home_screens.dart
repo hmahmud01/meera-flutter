@@ -2,10 +2,13 @@ import 'package:app/screens/cart_screens.dart';
 import 'package:app/state/cart_state.dart';
 import 'package:app/state/product_state.dart';
 import 'package:app/widgets/app_drawer.dart';
+import 'package:app/widgets/home_button.dart';
 import 'package:app/widgets/singleCategory.dart';
 import 'package:app/widgets/singleProduct.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:localstorage/localstorage.dart';
+import 'package:app/screens/login_screens.dart';
 
 class HomeScreens extends StatefulWidget {
   static const routeName = '/home-screens/';
@@ -17,6 +20,11 @@ class HomeScreens extends StatefulWidget {
 class _HomeScreensState extends State<HomeScreens> {
   bool _init = true;
   bool _isLoading = false;
+  LocalStorage storage = new LocalStorage('usertoken');
+  void _logoutNow() async{
+    await storage.clear();
+    Navigator.of(context).pushReplacementNamed(LoginScreens.routeName);
+  }
   @override
   void didChangeDependencies() async{
     if(_init){
@@ -36,14 +44,25 @@ class _HomeScreensState extends State<HomeScreens> {
     print(product);
     if(!_isLoading)
       return Scaffold(
-        appBar: AppBar(title: Text("MAI SEED")),
-        body: Center(child: Text("Something is wrong"))
+          appBar: AppBar(
+            title: Text("MAI SEED"),
+            actions: [
+              IconButton(
+                  onPressed: (){
+                    _logoutNow();
+                  },
+                  icon: Icon(Icons.logout)
+              )
+            ],
+          ),
+          body: Center(child: Text("Something is wrong"))
       );
 
     else
       return Scaffold(
         drawer: AppDrawer(),
         appBar: AppBar(
+          centerTitle: true,
           backgroundColor: Colors.red,
           title: Text('MAI SEED'),
           actions: [
@@ -55,6 +74,7 @@ class _HomeScreensState extends State<HomeScreens> {
             )
           ],
         ),
+
         body: Column(
           children: [
             new Padding(
@@ -63,7 +83,7 @@ class _HomeScreensState extends State<HomeScreens> {
                 alignment: Alignment.centerLeft,
                 child: new Text(
                   "প্রোডাক্ট",
-                  style: TextStyle(fontWeight: FontWeight.w800, fontSize: 18.0),
+                  style: TextStyle(fontFamily: 'NatoSans', fontWeight: FontWeight.w800, fontSize: 32.0),
                 ),
               ),
             ),
@@ -73,7 +93,7 @@ class _HomeScreensState extends State<HomeScreens> {
                 alignment: Alignment.centerLeft,
                 child: new Text(
                   "প্রয়োজন অনুযায়ী বীজ কেনার জন্য ছবির উপর প্রেস করুন",
-                  style: TextStyle(fontWeight: FontWeight.w200, fontSize: 12.0),
+                  style: TextStyle(fontFamily: 'NatoSans', fontWeight: FontWeight.w200, fontSize: 16.0),
                 ),
               ),
             ),
@@ -91,7 +111,9 @@ class _HomeScreensState extends State<HomeScreens> {
                   itemBuilder: (ctx, i) => SingleCategory(category[i])),
             ),
           ],
-        )
+        ),
+        floatingActionButton: HomeButton(),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       );
   }
 }

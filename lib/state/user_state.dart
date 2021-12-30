@@ -8,7 +8,10 @@ class UserState with ChangeNotifier{
   LocalStorage storage = new LocalStorage('usertoken');
 
   Future<bool> loginNow(String name, String pass) async {
-    String url = 'http://10.0.2.2:8000/api/login/';
+    // server url
+    String url = 'http://159.223.84.21:8000/api/login/';
+    // local url
+    // String url = 'http://10.0.2.2:8000/api/login/';
     try{
       http.Response response = await http.post(Uri.parse(url),
         headers: {
@@ -20,6 +23,7 @@ class UserState with ChangeNotifier{
         })
       );
       var data = json.decode(response.body) as Map;
+      print(data);
       if(data.containsKey("token")){
         storage.setItem("token", data['token']);
         print(storage.getItem('token'));
@@ -33,16 +37,23 @@ class UserState with ChangeNotifier{
     }
   }
 
-  Future<bool> registerNow(String name, String pass) async {
-    String url = 'http://10.0.2.2:8000/api/register/';
+  Future<bool> registerNow(String username, String pass, String name, String phone, String jela, String upojela) async {
+    // server url
+    String url = 'http://159.223.84.21:8000/api/register/';
+    // local url
+    // String url = 'http://10.0.2.2:8000/api/register/';
     try{
       http.Response response = await http.post(Uri.parse(url),
           headers: {
             'Content-Type': "application/json",
           },
           body: json.encode({
-            "username": name,
-            "password": pass
+            "username": username,
+            "password": pass,
+            "name": name,
+            "phone": phone,
+            "jela": jela,
+            "upojela": upojela
           })
       );
       var data = json.decode(response.body) as Map;

@@ -15,6 +15,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
   final _form = GlobalKey<FormState>();
   String _username = '';
   String _password = '';
+  String _name = '';
+  String _phone = '';
+  String _jela = '';
+  String _upojela = '';
   String _confpass = '';
 
   _registerNow() async {
@@ -26,7 +30,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
     bool isregis = await Provider.of<UserState>(
       context,
       listen: false,
-    ).registerNow(_username, _password);
+    ).registerNow(_username, _password, _name, _phone, _jela, _upojela);
     print(isregis);
     if (isregis) {
       Navigator.of(context).pushReplacementNamed(LoginScreens.routeName);
@@ -103,7 +107,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             icon: Icon(Icons.person),
                           ),
                           onSaved: (v){
-                            _username = v;
+                            _name = v;
                           },
                         ),
                         TextFormField(
@@ -119,6 +123,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           ),
                           onSaved: (v){
                             _username = v;
+                            _phone = v;
                           },
                         ),
                         TextFormField(
@@ -133,7 +138,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             icon: Icon(Icons.location_on_outlined),
                           ),
                           onSaved: (v){
-                            _username = v;
+                            _jela = v;
                           },
                         ),
                         TextFormField(
@@ -148,7 +153,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             icon: Icon(Icons.location_on),
                           ),
                           onSaved: (v){
-                            _username = v;
+                            _upojela = v;
                           },
                         ),
                         TextFormField(

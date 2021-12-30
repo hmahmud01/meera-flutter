@@ -1,5 +1,6 @@
 import 'package:app/state/product_state.dart';
 import 'package:app/widgets/app_drawer.dart';
+import 'package:app/widgets/home_button.dart';
 import 'package:app/widgets/singleProduct.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -14,6 +15,7 @@ class FavouriteScreens extends StatelessWidget {
       drawer: AppDrawer(),
       appBar: AppBar(
         backgroundColor: Colors.red,
+        centerTitle: true,
         title: Text('MAI SEED'),
       ),
       body: Padding(
@@ -34,6 +36,8 @@ class FavouriteScreens extends StatelessWidget {
               favourite: favourite[i].favourite,
             )),
       ),
+      floatingActionButton: HomeButton(),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
 }
