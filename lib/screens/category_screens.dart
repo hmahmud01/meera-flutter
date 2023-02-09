@@ -5,6 +5,7 @@ import 'package:app/widgets/home_button.dart';
 import 'package:app/widgets/singleProduct.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'dart:convert';
 
 class CategoryScreens extends StatefulWidget {
   static const routeName = '/category-screens';
@@ -50,7 +51,7 @@ class _CategoryScreensState extends State<CategoryScreens> {
               child: Container(
                 alignment: Alignment.centerLeft,
                 child: new Text(
-                  "${product[0].category.title}",
+                  "${utf8.decode(product[0].category.title.runes.toList())}",
                   style: TextStyle(fontFamily: 'NatoSans', fontWeight: FontWeight.w800, fontSize: 32.0),
                 ),
               ),
@@ -60,7 +61,7 @@ class _CategoryScreensState extends State<CategoryScreens> {
               child: Container(
                 alignment: Alignment.centerLeft,
                 child: new Text(
-                  "প্রয়োজন অনুযায়ী বীজ কেনার জন্য ছবির উপর প্রেস করুন",
+                  "প্রয়োজন অনুযায়ী সবজি বীজ কেনার জন্য প্রোডাক্টের ছবির উপর প্রেস করুন",
                   style: TextStyle(fontFamily: 'NatoSans', fontWeight: FontWeight.w200, fontSize: 16.0),
                 ),
               ),
@@ -68,11 +69,11 @@ class _CategoryScreensState extends State<CategoryScreens> {
             Divider(),
             Container(
               child: Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.all(10.0),
                 child: GridView.builder(
                     shrinkWrap: true,
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      childAspectRatio: 3/2,
+                      childAspectRatio: 1/1.4,
                       crossAxisCount: 2,
                       crossAxisSpacing: 10,
                       mainAxisSpacing: 10,
@@ -83,6 +84,8 @@ class _CategoryScreensState extends State<CategoryScreens> {
                       name: product[i].name,
                       image: product[i].thumbImage,
                       price: product[i].price,
+                      qty: product[i].packSize.size,
+                      stock: product[i].invStock,
                       favourite: product[i].favourite,
                     )),
               ),
@@ -91,24 +94,6 @@ class _CategoryScreensState extends State<CategoryScreens> {
         ),
         floatingActionButton: HomeButton(),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-        // Padding(
-        //   padding: const EdgeInsets.all(8.0),
-        //   child: GridView.builder(
-        //       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        //         childAspectRatio: 3/2,
-        //         crossAxisCount: 2,
-        //         crossAxisSpacing: 10,
-        //         mainAxisSpacing: 10,
-        //       ),
-        //       itemCount: product.length,
-        //       itemBuilder: (ctx, i) => SingleProduct(
-        //         id: product[i].id,
-        //         name: product[i].name,
-        //         image: product[i].thumbImage,
-        //         price: product[i].price,
-        //         favourite: product[i].favourite,
-        //       )),
-        // )
     );
   }
 }

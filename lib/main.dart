@@ -8,6 +8,10 @@ import 'package:app/screens/order_history_screens.dart';
 import 'package:app/screens/order_screens.dart';
 import 'package:app/screens/product_details_screens.dart';
 import 'package:app/screens/registration_screens.dart';
+import 'package:app/screens/return_screens.dart';
+import 'package:app/screens/terms_screens.dart';
+import 'package:app/screens/policy.dart';
+import 'package:app/screens/about.dart';
 import 'package:app/state/cart_state.dart';
 import 'package:app/state/product_state.dart';
 import 'package:app/state/user_state.dart';
@@ -16,14 +20,6 @@ import 'package:localstorage/localstorage.dart';
 import 'package:provider/provider.dart';
 import './pages/login.dart';
 
-// void main(){
-//   runApp(
-//     MaterialApp(
-//       debugShowCheckedModeBanner: false,
-//       home: Login()
-//     )
-//   );
-// }
 
 main () => runApp(Myapp());
 
@@ -66,7 +62,11 @@ class Myapp extends StatelessWidget {
           CartScreen.routeName: (ctx) => CartScreen(),
           OrderScreens.routeName: (ctx) => OrderScreens(),
           Order.routeName: (ctx) => Order(),
-          CategoryScreens.routeName: (ctx) => CategoryScreens()
+          CategoryScreens.routeName: (ctx) => CategoryScreens(),
+          TermScreens.routeName: (ctx) => TermScreens(),
+          ReturnScreens.routeName: (ctx) => ReturnScreens(),
+          PolicyScreens.routeName: (ctx) => PolicyScreens(),
+          AboutScreens.routeName: (ctx) => AboutScreens(),
         },
       ),
     );

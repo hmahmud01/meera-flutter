@@ -71,40 +71,87 @@ class Product {
   }
 }
 
+// class Category {
+//   int id;
+//   String title;
+//
+//   Category({this.id, this.title});
+//
+//   Category.fromJson(Map<String, dynamic> json) {
+//     id = json['id'];
+//     title = json['title'];
+//   }
+//
+//   Map<String, dynamic> toJson() {
+//     final Map<String, dynamic> data = new Map<String, dynamic>();
+//     data['id'] = this.id;
+//     data['title'] = this.title;
+//     return data;
+//   }
+// }
+
 class Category {
   int id;
   String title;
+  String thumbImage;
 
-  Category({this.id, this.title});
+  Category({this.id, this.title, this.thumbImage});
 
   Category.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     title = json['title'];
+    thumbImage = json['thumb_image'];
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['id'] = this.id;
     data['title'] = this.title;
+    data['thumb_image'] = this.thumbImage;
     return data;
   }
 }
 
+// class PackSize {
+//   int id;
+//   String size;
+//
+//   PackSize({this.id, this.size});
+//
+//   PackSize.fromJson(Map<String, dynamic> json) {
+//     id = json['id'];
+//     size = json['size'];
+//   }
+//
+//   Map<String, dynamic> toJson() {
+//     final Map<String, dynamic> data = new Map<String, dynamic>();
+//     data['id'] = this.id;
+//     data['size'] = this.size;
+//     return data;
+//   }
+// }
+
 class PackSize {
   int id;
   String size;
+  double qty;
+  String measure;
 
-  PackSize({this.id, this.size});
+  PackSize({this.id, this.size, this.qty, this.measure});
 
   PackSize.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     size = json['size'];
+    qty = json['qty'];
+    measure = json['measure'];
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['id'] = this.id;
     data['size'] = this.size;
+    data['qty'] = this.qty;
+    data['measure'] = this.measure;
     return data;
   }
 }

@@ -12,13 +12,15 @@ class CartState with ChangeNotifier{
   List<OrderModel> _orders;
 
   Future<void> getCartDatas() async {
-    String url = 'http://10.0.2.2:8000/api/cart/';
+    // String url = 'http://10.0.2.2:8000/api/cart/';
+    String url = 'http://159.223.84.21:8000/api/cart/';
     var token = storage.getItem('token');
     try {
       http.Response response = await http.get(Uri.parse(url), headers: {
         "Authorization": "token $token",
       });
       var data = json.decode(response.body) as Map;
+      print("cartdata");
       print(data);
       print(data['error']);
       List<CartModel> demo = [];
@@ -38,15 +40,14 @@ class CartState with ChangeNotifier{
   }
 
   Future<void> getoldOrders() async {
-    String url = 'http://10.0.2.2:8000/api/order/';
+    // String url = 'http://10.0.2.2:8000/api/order/';
+    String url = 'http://159.223.84.21:8000/api/order/';
     var token = storage.getItem('token');
     try {
       http.Response response = await http.get(Uri.parse(url), headers: {
         "Authorization": "token $token",
       });
       var data = json.decode(response.body) as Map;
-      print(data);
-      // print(data);
       List<OrderModel> demo = [];
       if (data['error'] == false) {
         data['data'].forEach((element) {
@@ -63,20 +64,23 @@ class CartState with ChangeNotifier{
     }
   }
 
-  Future<void> addToCart(int id) async{
-    String url = 'http://10.0.2.2:8000/api/addtocart/';
+  Future<void> addToCart(int id, int qty) async{
+    // String url = 'http://10.0.2.2:8000/api/addtocart/';
+    String url = 'http://159.223.84.21:8000/api/addtocart/';
     var token = storage.getItem('token');
-
+    print(qty);
     try{
       http.Response response = await http.post(
           Uri.parse(url),
-          body: json.encode({'id': id}),
+          body: json.encode({'id': id, 'qty': qty}),
           headers: {
             'Content-Type': "application/json",
             'Authorization' : "token $token"
           }
       );
       var data = json.decode(response.body)as Map;
+      print("adding cart");
+      print(data);
       print(data['error']);
       if (data['error']==false){
         getCartDatas();
@@ -88,7 +92,8 @@ class CartState with ChangeNotifier{
   }
 
   Future<void> deleteCartProduct(int id) async{
-    String url = 'http://10.0.2.2:8000/api/deletecartproduct/';
+    // String url = 'http://10.0.2.2:8000/api/deletecartproduct/';
+    String url = 'http://159.223.84.21:8000/api/deletecartproduct/';
     var token = storage.getItem('token');
 
     try{
@@ -112,7 +117,8 @@ class CartState with ChangeNotifier{
   }
 
   Future<bool> deleteCart(int id) async{
-    String url = 'http://10.0.2.2:8000/api/deletecart/';
+    // String url = 'http://10.0.2.2:8000/api/deletecart/';
+    String url = 'http://159.223.84.21:8000/api/deletecart/';
     var token = storage.getItem('token');
 
     try{
@@ -141,8 +147,9 @@ class CartState with ChangeNotifier{
     }
   }
 
-  Future<bool> orderCart(int cartid, String address, String email, String phone) async{
-    String url = 'http://10.0.2.2:8000/api/ordercreate/';
+  Future<bool> orderCart(int cartid, String address, String email, String phone, String name) async{
+    // String url = 'http://10.0.2.2:8000/api/ordercreate/';
+    String url = 'http://159.223.84.21:8000/api/ordercreate/';
     var token = storage.getItem('token');
     print(cartid);
     try{
@@ -153,6 +160,7 @@ class CartState with ChangeNotifier{
             "email": email,
             "address":address,
             "phone":phone,
+            "name":name,
           }),
           headers: {
             'Content-Type': "application/json",
@@ -187,7 +195,6 @@ class CartState with ChangeNotifier{
 
   List<OrderModel> get oldorder {
     if(_orders != null){
-      print(_orders);
       return [..._orders];
     }else{
       return null;

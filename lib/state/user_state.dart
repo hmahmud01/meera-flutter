@@ -10,7 +10,6 @@ class UserState with ChangeNotifier{
   Future<bool> loginNow(String name, String pass) async {
     // server url
     String url = 'http://159.223.84.21:8000/api/login/';
-    // local url
     // String url = 'http://10.0.2.2:8000/api/login/';
     try{
       http.Response response = await http.post(Uri.parse(url),
@@ -26,7 +25,9 @@ class UserState with ChangeNotifier{
       print(data);
       if(data.containsKey("token")){
         storage.setItem("token", data['token']);
+        storage.setItem("name", name);
         print(storage.getItem('token'));
+        print(storage.getItem('name'));
         return true;
       }
       return false;

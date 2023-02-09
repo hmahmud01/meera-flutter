@@ -45,6 +45,8 @@ class _HomeScreensState extends State<HomeScreens> {
     if(!_isLoading)
       return Scaffold(
           appBar: AppBar(
+            centerTitle: true,
+            backgroundColor: Colors.red,
             title: Text("MAI SEED"),
             actions: [
               IconButton(
@@ -92,7 +94,7 @@ class _HomeScreensState extends State<HomeScreens> {
               child: Container(
                 alignment: Alignment.centerLeft,
                 child: new Text(
-                  "প্রয়োজন অনুযায়ী বীজ কেনার জন্য ছবির উপর প্রেস করুন",
+                  "প্রয়োজন অনুযায়ী সবজি বীজ কেনার জন্য প্রোডাক্টের ছবির উপর প্রেস করুন",
                   style: TextStyle(fontFamily: 'NatoSans', fontWeight: FontWeight.w200, fontSize: 16.0),
                 ),
               ),
